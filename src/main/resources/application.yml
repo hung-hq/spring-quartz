@@ -17,3 +17,23 @@ spring:
     job-store-type: jdbc
     jdbc:
       initialize-schema: always
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: QuartzScheduler
+            instanceId: AUTO
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 3
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+            dataSource: quartzDs
+          dataSource:
+            quartzDs:
+              driver: org.postgresql.Driver
+              URL: jdbc:postgresql://localhost:5432/spring_quartz
+              user: postgres
+              password: postgres
+              provider: hikaricp

@@ -1,14 +1,10 @@
 package com.example.spring.quartz.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 import javax.persistence.*;
 
-@ToString
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "scheduler_job_info")
 public class SchedulerJobInfo {

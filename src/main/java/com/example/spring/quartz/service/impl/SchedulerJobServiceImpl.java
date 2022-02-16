@@ -117,7 +117,7 @@ public class SchedulerJobServiceImpl implements SchedulerJobService {
             scheduleJob.setCronJob(false);
             scheduleJob.setRepeatTime((long) 1);
         }
-        if (scheduleJob.getJobId() != null) {
+        if (scheduleJob.getJobId() == null) {
             log.info("Job Info: {}", scheduleJob);
             scheduleNewJob(scheduleJob);
         } else {

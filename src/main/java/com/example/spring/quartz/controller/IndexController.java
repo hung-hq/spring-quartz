@@ -13,7 +13,7 @@ import java.util.List;
 public class IndexController {
     private SchedulerJobService schedulerJobService;
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String index(Model model) {
         List<SchedulerJobInfo> jobList = schedulerJobService.getAllJobList();
         model.addAttribute("jobs", jobList);
